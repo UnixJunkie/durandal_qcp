@@ -1,0 +1,29 @@
+The correspondence used to compute CARMSD for a pair of proteins is 1 to 1.
+If two proteins A and B are to be optimally superposed, both PDB files
+(A.pdb and B.pdb) must have the same numbers of alpha carbons.
+The first alpha carbon in A.pdb will be matched to the first alpha carbon in
+B.pdb, and so on.
+
+Clustering up to 20,000 PDB files should work on most machines.
+Workstations with a lot of memory will be able to cluster even more files.
+
+Examples:
+---------
+
+* to perform exact clustering using a fixed cutoff value of 3.0 Angstroms:
+
+durandal -i [file_containing_one_PDB_filename_per_line] -d 3.0 -o out -s -v
+
+* there is also another tool included, to compute CARMSD of many files
+  versus a reference one (the first in the list is considered the
+  reference):
+
+ranker [file_containing_one_PDB_filename_per_line]
+
+If you want to know more about how the software is working, you can have a look
+at http://bioinformatics.oxfordjournals.org/content/27/7/939
+
+Don't hesitate to ask if you encounter any problem while using the software.
+
+Best regards,
+Francois Berenger.
